@@ -1,5 +1,10 @@
 import { NavLink } from 'react-router-dom'
 
+import { getInitials } from '../utils/getInitials'
+
+// The student who is signed in — shown in the top-right corner
+const currentStudent = 'Benju Guzman'
+
 // The pages shown in the navigation bar.
 // Add a new line here and the link appears automatically.
 const navLinks = [
@@ -37,9 +42,9 @@ function Navbar() {
           ))}
         </nav>
 
-        {/* RIGHT: small profile icon */}
-        <div className="navbar-profile" title="Student account">
-          👤
+        {/* RIGHT: the signed-in student's profile */}
+        <div className="navbar-profile" title={currentStudent}>
+          {getInitials(currentStudent)}
         </div>
       </div>
     </header>

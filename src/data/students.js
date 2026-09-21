@@ -7,11 +7,13 @@
 
 export const students = [
   {
-    studentNumber: '2024-0001',
-    name: 'Alice Johnson',
-    course: 'Computer Science',
-    yearLevel: '3rd Year',
-    email: 'alice.johnson@student.edu',
+    // The first student in the list is used as the profile on the Home page,
+    // so this is the portal owner's own record.
+    studentNumber: '202400050',
+    name: 'Benju Guzman',
+    course: 'BSIT',
+    yearLevel: '3-6',
+    email: 'benju.guzman@student.edu',
     gpa: 3.8,
     credits: 45,
     phone: '(555) 123-0101',
