@@ -1,0 +1,75 @@
+// ============================================================
+// Sample student data for the Student Information Portal.
+//
+// The Home page and the Students page both import this list,
+// so the sample data only has to be updated in ONE place.
+// ============================================================
+
+export const students = [
+  {
+    studentNumber: '2024-0001',
+    name: 'Alice Johnson',
+    course: 'Computer Science',
+    yearLevel: '3rd Year',
+    email: 'alice.johnson@student.edu',
+    gpa: 3.8,
+    credits: 45,
+    phone: '(555) 123-0101',
+    status: 'Active',
+  },
+  {
+    studentNumber: '2024-0002',
+    name: 'Bob Smith',
+    course: 'Mathematics',
+    yearLevel: '2nd Year',
+    email: 'bob.smith@student.edu',
+    gpa: 3.5,
+    credits: 30,
+    phone: '(555) 123-0102',
+    status: 'Active',
+  },
+  {
+    studentNumber: '2024-0003',
+    name: 'Carol Williams',
+    course: 'Physics',
+    yearLevel: '4th Year',
+    email: 'carol.williams@student.edu',
+    gpa: 3.9,
+    credits: 60,
+    phone: '(555) 123-0103',
+    status: 'Active',
+  },
+  {
+    studentNumber: '2024-0004',
+    name: 'David Brown',
+    course: 'Computer Science',
+    yearLevel: '1st Year',
+    email: 'david.brown@student.edu',
+    gpa: 3.2,
+    credits: 15,
+    phone: '(555) 123-0104',
+    status: 'Active',
+  },
+  {
+    studentNumber: '2024-0005',
+    name: 'Eva Martinez',
+    course: 'Biology',
+    yearLevel: '2nd Year',
+    email: 'eva.martinez@student.edu',
+    gpa: 3.7,
+    credits: 32,
+    phone: '(555) 123-0105',
+    status: 'Active',
+  },
+  {
+    studentNumber: '2024-0006',
+    name: 'Frank Lee',
+    course: 'Mathematics',
+    yearLevel: '3rd Year',
+    email: 'frank.lee@student.edu',
+    gpa: 3.6,
+    credits: 48,
+    phone: '(555) 123-0106',
+    status: 'Active',
+  },
+]

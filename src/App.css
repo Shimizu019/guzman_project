@@ -1,0 +1,702 @@
+/* ============================================================
+   Shared design system for the Student Information Portal
+
+   These classes are used by the Navbar, the cards and every
+   page, so the design stays consistent. Tailwind utility
+   classes are still used for small spacing adjustments.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. Page layout
+   ------------------------------------------------------------ */
+.page {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 44px 24px 72px;
+}
+
+/* Title + subtitle block at the top of a page */
+.page-head {
+  margin-bottom: 28px;
+}
+
+.page-title {
+  margin: 0 0 6px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: var(--color-dark);
+}
+
+.page-subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-muted);
+}
+
+/* Small uppercase label, e.g. "STUDENT INFORMATION PORTAL" */
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background-color: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+/* A heading with something on its right (e.g. a button) */
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.section-head .section-title {
+  margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------
+   2. Navbar
+   ------------------------------------------------------------ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Brand (logo + "Student Portal") */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.navbar-brand-text {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+/* Navigation links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 9px 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+/* The page we are currently viewing */
+.nav-link-active {
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+/* Small profile icon on the right */
+.navbar-profile {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+
+/* ------------------------------------------------------------
+   3. Buttons
+   ------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-outline {
+  background-color: var(--color-card);
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+
+/* ------------------------------------------------------------
+   4. Cards
+   ------------------------------------------------------------ */
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Used by the student and course cards */
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+
+
+/* ------------------------------------------------------------
+   5. Badges and status dot
+   ------------------------------------------------------------ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* The green "Active" badge */
+.badge-status {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+  color: var(--color-success);
+}
+
+/* The small green circle inside the status badge */
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+  display: inline-block;
+}
+
+/* White badge used on top of a coloured background */
+.badge-light {
+  background-color: var(--color-card);
+  border-color: var(--color-primary-border);
+  color: var(--color-primary);
+}
+
+/* Course code badge (e.g. CS-101) */
+.badge-code {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+
+/* ------------------------------------------------------------
+   6. Initials avatar
+   The letters are generated from the student's name, so no
+   image file is needed.
+   ------------------------------------------------------------ */
+.avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-border);
+  color: var(--color-primary);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.avatar-lg {
+  width: 72px;
+  height: 72px;
+  font-size: 24px;
+}
+
+
+/* ------------------------------------------------------------
+   7. Info rows (a label on the left, a value on the right)
+   ------------------------------------------------------------ */
+.info-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark);
+  text-align: right;
+}
+
+
+/* ------------------------------------------------------------
+   8. Search field and filter chips
+   ------------------------------------------------------------ */
+.field {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background-color: var(--color-card);
+  color: var(--color-dark);
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field::placeholder {
+  color: var(--color-muted);
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.chip {
+  padding: 8px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.chip:hover {
+  border-color: var(--color-border-strong);
+  color: var(--color-dark);
+}
+
+/* The filter the user has selected */
+.chip-active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+
+/* ------------------------------------------------------------
+   9. Statistics
+   ------------------------------------------------------------ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.stat {
+  padding: 22px 18px;
+  border-radius: var(--radius);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.stat-number {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.15;
+}
+
+.stat-label {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+/* A smaller row of statistics, used on the Students/Courses pages */
+.summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.summary-row .stat {
+  min-width: 190px;
+  flex: 0 1 auto;
+}
+
+
+/* ------------------------------------------------------------
+   10. Hero section (Home page)
+   ------------------------------------------------------------ */
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+.hero-title {
+  margin: 0 0 16px;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--color-dark);
+}
+
+.hero-text {
+  margin: 0 0 26px;
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* The example student profile card on the right of the hero */
+.hero-card {
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.hero-card-head {
+  padding: 16px 24px;
+  background-color: var(--color-primary-soft);
+  border-bottom: 1px solid var(--color-primary-border);
+}
+
+.hero-card-body {
+  padding: 24px;
+}
+
+
+/* ------------------------------------------------------------
+   11. Feature cards and toolbar
+   ------------------------------------------------------------ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  padding: 26px 24px;
+  border-radius: var(--radius);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  background-color: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-border);
+  font-size: 21px;
+}
+
+.toolbar {
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 22px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+/* "No results" message */
+.empty {
+  padding: 56px 20px;
+  text-align: center;
+  color: var(--color-muted);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius);
+  background-color: var(--color-card);
+}
+
+
+/* ------------------------------------------------------------
+   12. Footer
+   ------------------------------------------------------------ */
+.footer {
+  background-color: var(--color-card);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 26px 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+
+/* ------------------------------------------------------------
+   13. Responsive design (media queries)
+   ------------------------------------------------------------ */
+
+/* Tablets and small laptops */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-text {
+    max-width: none;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-title {
+    font-size: 27px;
+  }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .page {
+    padding: 28px 16px 56px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* The navbar becomes two rows: brand + icon, then the links */
+  .navbar-inner {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    row-gap: 10px;
+  }
+
+  .navbar-links {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2px;
+  }
+
+  .navbar-profile {
+    order: 2;
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .nav-link {
+    padding: 8px 9px;
+    font-size: 14px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+  }
+
+  .summary-row .stat {
+    min-width: 100%;
+  }
+
+  /* Stack the label above the value so long values stay readable */
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .info-value {
+    text-align: left;
+  }
+
+  .footer-inner {
+    padding: 22px 16px;
+    font-size: 13px;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   14. Small extras
+   ------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Nicer scrollbar (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border-strong);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+
+

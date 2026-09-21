@@ -1,0 +1,87 @@
+/* ============================================================
+   Student Information Portal — main stylesheet
+
+   This file loads Tailwind CSS, then defines the colours,
+   fonts and animations that the whole portal shares.
+   ============================================================ */
+
+/* Tailwind CSS gives us ready-made utility classes */
+@import "tailwindcss";
+
+/* ------------------------------------------------------------
+   1. Design tokens
+   These CSS variables hold the colours of the portal so that
+   every page uses exactly the same shades.
+   ------------------------------------------------------------ */
+:root {
+  --color-primary: #2563eb;        /* blue accent               */
+  --color-primary-dark: #1d4ed8;   /* darker blue (button hover)*/
+  --color-primary-soft: #eff6ff;   /* light blue background     */
+  --color-primary-border: #bfdbfe; /* light blue border         */
+  --color-dark: #0f172a;           /* dark navy text            */
+  --color-muted: #64748b;          /* secondary text            */
+  --color-bg: #f8fafc;             /* page background           */
+  --color-card: #ffffff;           /* card background           */
+  --color-border: #e2e8f0;         /* normal border             */
+  --color-border-strong: #cbd5e1;  /* border on hover           */
+  --color-success: #16a34a;        /* "Active" status           */
+
+  --radius: 16px;                  /* rounded corner size       */
+
+  /* Soft shadows */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06),
+               0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 10px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 18px 36px rgba(15, 23, 42, 0.12);
+
+  /* Clean, modern system font (no external downloads needed) */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+
+  /* The portal is designed for a light theme, so we keep it light */
+  color-scheme: light;
+}
+
+/* ------------------------------------------------------------
+   2. Base styles
+   ------------------------------------------------------------ */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Headings use the dark navy colour by default */
+h1,
+h2,
+h3 {
+  color: var(--color-dark);
+}
+
+/* ------------------------------------------------------------
+   3. Page animation
+   A small fade-in when a page is opened. Nothing flashy.
+   ------------------------------------------------------------ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* "main > *" means the page component inside <main> */
+main > * {
+  animation: fadeIn 0.35s ease-out;
+}
+
