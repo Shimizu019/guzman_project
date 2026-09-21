@@ -1,5 +1,9 @@
 # 🎓 Student Information Portal
 
+> **BSIT Laboratory Activity**
+>
+> **Benju Guzman** · BSIT 3-6 · Student ID **202400050**
+
 A simple, responsive **Student Information Portal** built with **React**, **React Router**, **Tailwind CSS**, and **Vite**. It lets users browse student profiles, explore a course catalog with real-time search and filtering, and read about the institution behind the portal.
 
 ---
@@ -183,17 +187,27 @@ const navLinks = [
 
 `NavLink` gives us the `isActive` flag, which adds the `nav-link-active` class (blue text + light-blue background) to the page we are viewing. The home link also uses `end` so it is only highlighted on `/`.
 
+The circle on the right shows the signed-in student's initials, built from a small constant at the top of the file:
+
+```jsx
+const currentStudent = 'Benju Guzman' // shown in the top-right corner
+
+<div className="navbar-profile" title={currentStudent}>
+  {getInitials(currentStudent)}
+</div>
+```
+
 ### `StudentCard.jsx`
 Shows one student. Every piece of information arrives as a **prop**:
 
 ```jsx
 <StudentCard
-  name="Alice Johnson"
-  studentNumber="2024-0001"
-  course="Computer Science"
-  yearLevel="3rd Year"
+  name="Benju Guzman"
+  studentNumber="202400050"
+  course="BSIT"
+  yearLevel="3-6"
   status="Active"
-  email="alice.johnson@student.edu"
+  email="benju.guzman@student.edu"
   gpa={3.8}
   credits={45}
   phone="(555) 123-0101"
@@ -249,17 +263,19 @@ All sample data lives in `src/data/`.
 
 ```js
 {
-  studentNumber: '2024-0001',  // shown as "Student ID"
-  name: 'Alice Johnson',
-  course: 'Computer Science',  // shown as "Program"; also the filter value
-  yearLevel: '3rd Year',
-  email: 'alice.johnson@student.edu',
+  studentNumber: '202400050',  // shown as "Student ID"
+  name: 'Benju Guzman',        // the author's own record (first in the list)
+  course: 'BSIT',              // shown as "Program"; also the filter value
+  yearLevel: '3-6',
+  email: 'benju.guzman@student.edu',
   gpa: 3.8,
   credits: 45,
   phone: '(555) 123-0101',
   status: 'Active',            // shown in the green badge
 }
 ```
+
+> The **first** record in `students` is the one displayed as the profile card in the Home page hero, so it belongs to the portal owner.
 
 ### Course object (`src/data/courses.js`)
 
@@ -306,7 +322,7 @@ const filteredStudents = students.filter((student) => {
 The filter buttons are built from the data itself, so they always match the list:
 
 ```jsx
-// "new Set" removes duplicates: Computer Science appears twice in the data
+// "new Set" removes duplicates: Mathematics appears twice in the data
 const programs = [...new Set(students.map((student) => student.course))]
 
 {['All', ...programs].map((program) => (
@@ -381,10 +397,10 @@ Add a student by appending an object to the `students` array in `src/data/studen
 
 ```js
 {
-  studentNumber: '2024-0007',
+  studentNumber: '202400051',
   name: 'Grace Hopper',
-  course: 'Computer Science',
-  yearLevel: '4th Year',
+  course: 'BSIT',
+  yearLevel: '3-6',
   email: 'grace.h@student.edu',
   gpa: 4.0,
   credits: 72,
@@ -419,6 +435,19 @@ Add a course by appending an object to the `courses` array in `src/data/courses.
 | The Home link looks active on every page | The root `NavLink` needs `end` (already handled in `Navbar.jsx`) |
 | Refreshing `/students` gives a 404 in production | Your host must rewrite unknown paths to `index.html` (SPA fallback). The Vite dev server and `npm run preview` do this automatically |
 | Port 5173 already in use | Stop the other process or run `npm run dev -- --port 3000` |
+
+---
+
+## 👤 Author
+
+| | |
+| --- | --- |
+| **Name** | Benju Guzman |
+| **Program** | BSIT — Bachelor of Science in Information Technology |
+| **Year & Section** | 3-6 |
+| **Student ID** | 202400050 |
+
+The profile shown on the **Home page hero card** and in the **navigation bar** is the author's own student record. It is always the **first** entry in the `students` array in `src/data/students.js`, so editing that first record updates both places at once.
 
 ---
 
